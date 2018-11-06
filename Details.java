@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+
 class StudDetails
 {
 int stuid,std,sub1,sub2,sub3,total;
