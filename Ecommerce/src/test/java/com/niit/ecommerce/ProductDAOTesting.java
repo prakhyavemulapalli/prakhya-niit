@@ -1,6 +1,10 @@
 package com.niit.ecommerce;
 
+
+
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -25,55 +29,57 @@ AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContex
 		productDAO=(ProductDao)context.getBean("productDAO");
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void addProductTest()
 	{
 		Product product=new Product();
-		product.setProduct_id(46);
-		product.setProductname("WindowCurtain");
-		product.setDiscription("black and white");
-		product.setQuantity(5);
+		product.setProduct_id(23);
+		product.setProductname("Window");
+		product.setDescription("black");
+		product.setQuantity(6);
 		
 		assertTrue("Probem in Adding the Category",productDAO.addProduct(product));
 	}
 	
-//	@Ignore
-//	@Test
-//	public void updateProductTest()
-//	{	
-//		Product product=productDAO.getProduct(5);
-//		product.setDiscription("Wash Basin");	
-//		assertTrue("Problem in Updating ",productDAO.update(product));
-//	}
-//	@Ignore
-//	@Test
-//	public void deleteProductTest()
-//	{
-//		Product product=productDAO.getProduct(5);
-//		assertTrue("Problem in Updating ",productDAO.delete(product));
-//	}
-//	
-//	@Test
-//	public void listProductsTest()
-//	{
-//		List<Product> listProducts=productDAO.listProducts();
-//		
-//		assertTrue("Problem in Listing",listProducts.size()>0);
-//		
-//		for(Product product:listProducts)
-//		{
-//			System.out.print("Product ID:"+product.getProductId());
-//			System.out.print("Product Name:"+product.getProductName());
-//			System.out.println("Product Desc:"+product.getproductDesc());
-//		}
-//	}
+	//@Ignore
+	@Test
+	public void updateProductTest()
+	{	
+		Product product=productDAO.getProduct(23);
+		product.setProductname("crafts");	
+		assertTrue("Problem in Updating ",productDAO.updateProduct(product));
+	}
+	@Ignore
+	@Test
+	public void deleteProductTest()
+	{
+		Product product=productDAO.getProduct(5);
+		assertTrue("Problem in deleting ",productDAO.deleteProduct(5));
+	}
+	@Ignore
+	@Test
+	public void listProductsTest()
+	{
+		List<Product> listProducts=productDAO.listProducts();
+		
+		assertTrue("Problem in Listing",listProducts.size()>0);
+		
+		for(Product product:listProducts)
+		{
+			System.out.println("Product ID:"+product.getProduct_id());
+			System.out.println("Product Name:"+product.getProductname());
+			System.out.println("Product Desc:"+product.getDescription());
+			System.out.println("Product Price:"+product.getPrice());
+			System.out.println("Product Quantity:"+product.getQuantity());
+		}
+	}
 	
 }
 
 
 
 
-	
-
-
+//	
+//
+//

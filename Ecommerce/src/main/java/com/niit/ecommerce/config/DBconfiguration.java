@@ -20,7 +20,7 @@ public class DBconfiguration {
 	   {
 		   System.out.println("DBConfiguration class is scanned and bean is created");
 	   }
-		@Bean
+		@Bean(name="dataSource")
 	   public DataSource dataSource(){
 		   BasicDataSource dataSource=new BasicDataSource();
 		   dataSource.setDriverClassName("org.h2.Driver");
@@ -39,6 +39,8 @@ public class DBconfiguration {
 			hibernateProperties.setProperty(
 					"hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 			hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");//create-alter
+//			hibernateProperties.setProperty("javax.persistence.validation.mode","none");
+
 			hibernateProperties.setProperty("hibernate.show_sql", "true");//session.save(obj)-> insert into table values (..)
 			lsf.addProperties(hibernateProperties);
 			
