@@ -18,7 +18,7 @@
 <div class="container">
 <b>Product Details</b>
 <pre>
-<img src="<c:url value="/resources/images/${product.product_id }.jpg"></c:url>" height="50px" width="50px" class="img-rounded">
+<img src="<c:url value="/resources/images/${product.product_id }.jpg"></c:url>" height="150px" width="200px" class="img-rounded">
 <b>Product Name  :</b> ${product.productname}
 <b>Description   :</b>${product.description }
 <b>Price         :</b>${product.price }
@@ -41,7 +41,7 @@ Enter required units<br>
 </form> 
 </security:authorize>
 </pre>
-<a href="<c:url value='/all/getallproducts'></c:url>">Previous Page</a>
+
 </div>
 </body>
 </html>

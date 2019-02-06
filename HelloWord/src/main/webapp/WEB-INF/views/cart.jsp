@@ -55,7 +55,9 @@
 
 		</table>
 		<h4>Grand Total : ${grandTotal }</h4> 
+		<c:if test="${cartItems.size()>0}">
 		<a class="btn btn-md btn-success" style="float:right" href="<c:url value='/Carddetails'></c:url>">Place Order</a>
+		</c:if>
 		<a class="btn btn-md btn-primary" href="<c:url value='/homepage'></c:url>">Continue Shopping</a>
 	</div>
 </body>

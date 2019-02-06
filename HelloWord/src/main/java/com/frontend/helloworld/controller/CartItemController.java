@@ -69,7 +69,10 @@ public class CartItemController {
 			{
 				flag=1;
 				ct.setQuantity(ct.getQuantity()+requestedQuantity);
+				ct.setTotalPrice(ct.getProduct().getPrice()*ct.getQuantity());
 				System.out.println(ct.getQuantity());
+				System.out.println(ct.getTotalPrice());
+				
 				if(ct.getQuantity()<=product.getQuantity())
 				{
 			cartItemDao.updateCart(ct);
